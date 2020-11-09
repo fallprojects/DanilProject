@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from .models import *
 
-# Create your views here.
+def home_page(request):
+    news = News.objects.all()
+    context = {'news':news}
+    return render(request,'api/home.html',context)
