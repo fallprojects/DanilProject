@@ -1,4 +1,20 @@
 {% extends 'api/main.html' %}
 {% block content %}
-{{ news }}
+<table>
+    {% for game in games %}
+    <tr>
+        <td>{{ game.name_of_game }}</td>
+        <td>{{ game.time_of_game }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<table>
+
+{% for news in news %}
+<tr>
+    <th>{{ news.name }}</th>
+    <td>{{ news.description }}</td>
+</tr>
+{% endfor %}
+    </table>
 {% endblock %}
