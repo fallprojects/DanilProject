@@ -1,0 +1,25 @@
+{% extends 'api/main.html' %}
+{% block content %}
+<h5>La Liga:</h5>
+<table class="table table-sm">
+				<tr>
+					<th>Position</th>
+					<th>Team</th>
+					<th>Matches</th>
+                    <th>GS</th>
+                    <th>GC</th>
+                    <th>Points</th>
+				</tr>
+    {% for team in team %}
+    <tr>
+        <td>{{ team.position }}</td>
+        <td><a class="" href="{% url 'team' team.id %}">{{ team.name }}</a>
+        <td>{{ team.matches }}</td>
+        <td>{{ team.goals_scored }}</td>
+        <td>{{ team.goals_conceded }}</td>
+        <td>{{ team.points }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
