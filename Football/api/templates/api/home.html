@@ -12,6 +12,7 @@
 
 {% for news in news %}
 <tr>
+    <td>{{ news.date_created }}</td>
     <th>{{ news.name }}</th>
     <td>{{ news.description }}</td>
 </tr>
