@@ -6,5 +6,7 @@ urlpatterns = [
     path('',home_page,name='home'),
     path('news/',news_page,name='news'),
     path('games/',games_page,name='games'),
-    path('teams/',teams_page,name='teams')
+    path('table/',table_page,name='table'),
+    path('team/<int:pk>/',team_page,name='team'),
+    path('about_game/',about_game_page,name='about_game'),
 ]

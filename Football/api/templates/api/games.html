@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'api/main.html' %}
+{% block content %}
+<table>
 
-</body>
-</html>
+{% for game in game %}
+<tr>
+    <td>{{ game.time_of_game}}</td>
+    <th>{{ game.name_of_game }}</th>
+</tr>
+{% endfor %}
+    </table>
+
+
+{% endblock %}

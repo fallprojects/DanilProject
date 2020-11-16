@@ -9,3 +9,4 @@ admin.site.register(News,News_admin)
 admin.site.register(Games)
 admin.site.register(Tag)
 admin.site.register(Teams)
+
