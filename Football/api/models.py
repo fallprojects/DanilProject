@@ -3,6 +3,9 @@ from django.db import models
 class Tag(models.Model):
     name=models.CharField(max_length=100,null=True)
 
+    def __str__(self):
+        return self.name
+
 class News(models.Model):
     CATEGORY = (
         ('EPL','EPL'),
@@ -31,13 +34,19 @@ class Teams(models.Model):
     points = models.IntegerField(null=True)
     goals_scored = models.IntegerField(null=True)
     goals_conceded = models.IntegerField(null=True)
-    players = models.TextField(max_length=2000,null=True)
     tag = models.ManyToManyField(Tag)
 
     def __str__(self):
         return self.name
 
+class Players(models.Model):
+    first_name = models.CharField(max_length=50,null=True)
+    last_name = models.CharField(max_length=50,null=True)
+    team = models.ForeignKey(Teams,null=True,on_delete=models.SET_NULL)
+    number = models.IntegerField(null=True)
 
+    def __str__(self):
+        return self.last_name
 
 
 
