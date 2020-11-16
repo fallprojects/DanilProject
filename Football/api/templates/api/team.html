@@ -8,9 +8,13 @@
 </head>
 <body>
 <table>
-    <tr>
-        <td><br>{{ command.players }}</br></td>
-    </tr>
+  {% for command in command %}
+<tr>
+    <th>{{ command.first_name }}</th>
+    <th>{{ command.last_name }}</th>
+    <th>{{ command.number }}</th>
+</tr>
+{% endfor %}
 </table>
 {% endblock %}
 
