@@ -26,6 +26,6 @@ def table_page(request):
     return render(request,'api/table.html',context)
 
 def team_page(request,pk):
-    command = Teams.objects.get(id=pk)
+    command = Players.objects.all()
     context = {'command':command}
     return render(request,'api/team.html',context)
