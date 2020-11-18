@@ -48,6 +48,17 @@ class Players(models.Model):
     def __str__(self):
         return self.last_name
 
+class Rates(models.Model):
+      RESULTS = (
+          ('win','win'),
+          ('draw','draw'),
+          ('lose','lose')
+      )
+
+      results = models.CharField(max_length=100,null=True,choices=RESULTS)
+      money = models.IntegerField(null=True)
+      game = models.ManyToManyField(Games)
+
 
 
 
