@@ -5,7 +5,7 @@
 {% for game in game %}
 <tr>
     <td>{{ game.time_of_game}}</td>
-    <th>{{ game.name_of_game }}</th>
+    <td><a class="btn btn-dark" href="{% url 'rates' game.id %}">Ставки</a> </td><td><a href="{% url 'about_game' %}">{{ game.name_of_game }}</a></td>
 </tr>
 {% endfor %}
     </table>
