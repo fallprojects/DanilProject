@@ -9,4 +9,5 @@ urlpatterns = [
     path('table/',table_page,name='table'),
     path('team/<int:pk>/',team_page,name='team'),
     path('about_game/',about_game_page,name='about_game'),
+    path('rates/<int:pk>/',rates_page,name='rates'),
 ]
